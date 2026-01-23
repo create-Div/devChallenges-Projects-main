@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="resources/favicon.ico"
+      type="image/x-icon"
+      sizes="96x96"
+    />
+    <title>Guess The Word Game | devChallenges.io</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./src/main.ts" />
+  </head>
+  <body>
+    <main>
+      <section class="game-container">
+        <h1>word scramble</h1>
+        <div class="word-display">
+          <ul>
+            <li>
+              <span>r</span>
+            </li>
+            <li>
+              <span>e</span>
+            </li>
+            <li>
+              <span>l</span>
+            </li>
+            <li>
+              <span>o</span>
+            </li>
+            <li>
+              <span>w</span>
+            </li>
+            <li>
+              <span>f</span>
+            </li>
+          </ul>
+        </div>
+        <div class="stats">
+          <div class="tries">
+            <h2>tries</h2>
+            <span class="tries-amount">(4/5):</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+
+              <div class="dot"></div>
+
+              <div class="dot"></div>
+
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="mistakes">
+            <h2 class="mistakes">mistakes:</h2>
+            <ul>
+              <li>a,</li>
+              <li>e,</li>
+              <li>w,</li>
+              <li>t</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pressed-keys">
+          <ul>
+            <li>f</li>
+            <li>f</li>
+            <li>o</li>
+            <li>w</li>
+            <li class="active">_</li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="btn-container">
+          <button>random</button>
+          <button>reset</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Coded by
+      <a href="https://github.com/create-Div" rel="author" target="_blank"
+        >Arnold Limberg</a
+      >
+      | Challenge by
+      <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
+        >devChallenges.io</a
+      >.
+    </footer>
+  </body>
+</html>

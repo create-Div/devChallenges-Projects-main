@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shoe Product Page | devChallenges.io</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+
+    <link
+      rel="preload"
+      as="image"
+      href="shoe_image@2x.avif"
+      imagesrcset="shoe_image.avif 400w, shoe_image@2x.avif 800w, shoe_image@3x.avif 1200w"
+      imagesizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 400px"
+      type="image/avif"
+    />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="96x96" />
+  </head>
+  <body>
+    <main>
+      <article>
+        <nav aria-label="Breadcrumbs">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/products">Products</a></li>
+            <li aria-current="page">Sneakers</li>
+          </ol>
+        </nav>
+        <div class="img-container">
+          <img
+            src="img@2x.avif"
+            srcset="
+              shoe_image.avif     400w,
+              shoe_image@2x.avif  800w,
+              shoe_image@3x.avif 1200w
+            "
+            sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 400px"
+            alt="nike air zoom pegasus 38 running shoes"
+            width="708"
+            height="969"
+          />
+        </div>
+
+        <div class="content">
+          <h1>Nike Air Zoom Pegasus 38 for Running Men</h1>
+          <p>
+            The Nike Air Zoom Pegasus 38 is a high-performance running shoe
+            designed for speed and agility. With its lightweight and responsive
+            midsole, this shoe provides a smooth ride and excellent cushioning.
+            The Pegasus 38 features a full-length Zoom Air unit for added bounce
+            and a more natural stride. The upper is made of a breathable mesh
+            material with a supportive Flyknit construction for a snug and
+            comfortable fit. The Nike Air Zoom Pegasus 38 is a high-performance
+            running shoe designed for speed and agility. With its lightweight
+            and responsive midsole, this shoe provides a smooth ride and
+            excellent cushioning. The Pegasus 38 features a full-length Zoom Air
+            unit for added bounce and a more natural stride. The upper is made
+            of a breathable mesh material with a supportive Flyknit construction
+            for a snug and comfortable fit.
+          </p>
+          <h2>Highlights:</h2>
+          <ul>
+            <li>Lightweight and Responsive Midsole.</li>
+            <li>Full-Length Zoom Air Unit.</li>
+            <li>Breathable Mesh Upper.</li>
+          </ul>
+          <div class="attributes">
+            <dl>
+              <dt>color</dt>
+              <dd>black</dd>
+              <dt>size</dt>
+              <dd>42</dd>
+            </dl>
+            <span class="price" data-price="59.00">$59.00</span>
+          </div>
+          <div class="btn-container">
+            <button>Add to cart</button>
+            <button class="wishlist-btn">
+              <svg
+                class="heart-icon"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+              Add to wishlist
+            </button>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer>
+      Coded by
+      <a href="https://github.com/create-Div" rel="author" target="_blank"
+        >Arnold Limberg</a
+      >
+      | Challenge by
+      <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
+        >devChallenges.io</a
+      >.
+    </footer>
+  </body>
+</html>
