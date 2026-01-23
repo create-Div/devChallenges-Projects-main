@@ -1,2 +1,2 @@
 ﻿# devChallenges-Projects
-Practice projects from devChallenge
+
