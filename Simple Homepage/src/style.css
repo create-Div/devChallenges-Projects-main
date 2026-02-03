@@ -81,3 +81,73 @@
 		isolation: isolate;
 	}
 }
+
+body {
+	min-height: 100dvh;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	padding: 24px 0px;
+	align-items: center;
+}
+
+h1 {
+	& span {
+		color: #4138c2;
+	}
+}
+
+header,
+section,
+footer {
+	width: min(100% - 72px, 1280px);
+	border: 1px solid red;
+	margin-inline: auto;
+}
+
+.logo {
+	border: 1px solid red;
+}
+
+a[href]:not(.logo) {
+	display: inline-block;
+
+	padding: 12px 36px;
+	border-radius: 1000px;
+	text-decoration: none;
+	text-transform: capitalize;
+}
+
+ul li {
+	list-style: none;
+
+	& span {
+		display: flex;
+		height: 72px;
+		width: 72px;
+
+		border-radius: 20px;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.cta {
+	display: grid;
+
+	& h1 {
+		grid-column: 1 / -1;
+	}
+
+	& img {
+		grid-row: 1;
+		grid-column: 1 / -1;
+	}
+
+	.link-container {
+		border: 1px solid red;
+		grid-row: 3;
+	}
+}

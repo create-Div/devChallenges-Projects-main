@@ -1,0 +1,4 @@
+# Development tool directories
+.agents/
+.claude/
+.codex/

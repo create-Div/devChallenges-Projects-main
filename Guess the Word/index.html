@@ -17,11 +17,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./src/style.css" />
-    <link rel="stylesheet" href="./src/main.ts" />
+    <script type="module" src="./src/main.ts"></script>
   </head>
   <body>
     <main>
-      <section class="game-container">
+      <section id="game-container">
         <h1>word scramble</h1>
         <div class="word-display">
           <ul>
@@ -45,12 +45,12 @@
             </li>
           </ul>
         </div>
-        <div class="stats">
+        <div id="stats">
           <div class="tries">
             <h2>tries</h2>
             <span class="tries-amount">(4/5):</span>
             <div class="dots">
-              <div class="dot"></div>
+              <div class="dot active"></div>
               <div class="dot"></div>
 
               <div class="dot"></div>
@@ -70,9 +70,9 @@
             </ul>
           </div>
         </div>
-        <div class="pressed-keys">
+        <div id="pressed-keys">
           <ul>
-            <li>f</li>
+            <li class="success">f</li>
             <li>f</li>
             <li>o</li>
             <li>w</li>
@@ -81,8 +81,8 @@
           </ul>
         </div>
         <div class="btn-container">
-          <button>random</button>
-          <button>reset</button>
+          <button class="random-btn">random</button>
+          <button class="reset-btn">reset</button>
         </div>
       </section>
     </main>
