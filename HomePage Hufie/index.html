@@ -1,126 +1,221 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>homepage-hufie</title>
+    <title>Hufie - Where data and creativity come together</title>
+    <link rel="preload" as="image" href="/hero-image.avif"
+      imagesrcset="/hero-image.avif 1x, /hero-image@2x.avif 2x"
+      media="(min-width: 768px)" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./src/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
-  <body>
-    <header>
-      <nav>
-         <a href="./index.html"><img src="/full-logo.svg" alt="Huffie company logo"></a>
 
-        <ul>
-          <li> <a href="#">login</a>
-          </li>
-          <li><a href="#">sign up</a>
-          </li>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <nav class="container site-header-inner primary-nav"
+        aria-label="Primary navigation">
+        <a href="./index.html" class="brand-link" aria-label="Hufie home">
+          <img src="/logo.svg" alt="Hufie company logo" width="42" height="42"
+            decoding="async" />
+        </a>
+
+        <ul class="nav-links">
+          <li><a class="nav-link" href="#">Log in</a></li>
+          <li><a class="nav-cta" href="#">Sign up</a></li>
         </ul>
-       
       </nav>
     </header>
-    <main>
-      <section>
-        <div>
-          <span>
-            <img src="/drop.svg" alt="">
+
+    <main id="main" class="page-main">
+      <section class="hero-section container hero-layout"
+        aria-label="Hero section">
+        <p class="version-badge">
+          <span class="badge-drop" aria-hidden="true">
+            <img src="/drop.svg" alt="" width="10" height="11"
+              decoding="async" />
           </span>
-          <span>version 4.0.1</span>
+          <span>Version 4.0.1</span>
+        </p>
+
+        <h1 class="hero-title">Where data and creativity
+          come together.</h1>
+        <p class="hero-copy">
+          The fastest way to build and deploy websites with reusable
+          components.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#">Get started</a>
+          <a class="button button-ghost" href="#">View demo</a>
         </div>
-        <h1>Where data and creativity come together.</h1>
-        <p>The fastes way to build and deploy websites with resusuable components.</p>
-        <a href="#">get started</a>
-        <a href="#">view demo</a>
+
+        <picture class="hero-media">
+          <source media="(min-width: 768px)"
+            srcset="/hero-image.avif 1x, /hero-image@2x.avif 2x" />
+          <img class="hero-media-image"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+            alt="Dashboard preview with reusable component cards"
+            loading="eager" fetchpriority="high" width="560" height="468"
+            decoding="sync" />
+        </picture>
       </section>
-      <section>
-        <h2>This is a new creative process</h2>
-        <p>Quisque eleifend velit vel erat fringilla interdum</p>
-        <span>
-          🎨
-        </span>
-        <h3>
-          200+ cloneable components
-        </h3>
-        <p>Suspendisse id tortor venenatis, blandit lacus ut, efficitur diam. Proin vulputate nisl vel sem consequat euismod.</p>
-        <span>
-          🎯
-        </span>
-        <h3>Complete style guide for projects</h3>
-        <p>Suspendisse id tortor venenatis, blandit lacus ut, efficitur diam. Proin vulputate nisl vel sem consequat euismod.</p>
-        <span>🌸</span>
-        <h3>Modern & beautiful landing page</h3>
-        <p>Suspendisse id tortor venenatis, blandit lacus ut, efficitur diam. Proin vulputate nisl vel sem consequat euismod.</p>
-        <span>
-          ⚙️
-        </span>
-        <h3>Built in multiple ways</h3>
-        <p>Suspendisse id tortor venenatis, blandit lacus ut, efficitur diam. Proin vulputate nisl vel sem consequat euismod.</p>
-      </section>
-      <section>
-        <img src="/section-1.png" alt="card component with a cactus and description along with sample typography options">
-        <h2>200_ cloneanle components</h2>
-        <span>
-          🎨
-        </span>
-        
-        <p>From navigation bars to modals, buttons to forms, our library has everything you need to jumpstart your development process.</p>
-        <ul>
-          <li>
-            Rapidly build your own design system
+
+      <section class="process-section" aria-label="Creative process">
+        <h2 class="process-title">This is a new creative process</h2>
+        <p class="section-kicker section-kicker-centered">Quisque eleifend velit
+          vel erat fringilla
+          interdum</p>
+
+        <ul class="feature-grid" role="list">
+          <li class="feature-card">
+            <span class="icon-block icon-blue" aria-hidden="true">
+              🎨
+            </span>
+            <h3>200+ cloneable components</h3>
+            <p>
+              Suspendisse id tortor venenatis, blandit lacus ut, efficitur
+              diam.
+              Proin vulputate nisl vel sem consequat euismod.
+            </p>
           </li>
-          <li>Maintain consistancy across your website</li>
+
+          <li class="feature-card">
+            <span class="icon-block icon-amber" aria-hidden="true">
+              🎯
+            </span>
+            <h3>Complete style guide for projects</h3>
+            <p>
+              Suspendisse id tortor venenatis, blandit lacus ut, efficitur
+              diam.
+              Proin vulputate nisl vel sem consequat euismod.
+            </p>
+          </li>
+
+          <li class="feature-card">
+            <span class="icon-block icon-green" aria-hidden="true">
+              🌸
+            </span>
+            <h3>Modern and beautiful landing pages</h3>
+            <p>
+              Suspendisse id tortor venenatis, blandit lacus ut, efficitur
+              diam.
+              Proin vulputate nisl vel sem consequat euismod.
+            </p>
+          </li>
+
+          <li class="feature-card">
+            <span class="icon-block icon-violet" aria-hidden="true">
+              ⚙️
+            </span>
+            <h3>Built in multiple ways</h3>
+            <p>
+              Suspendisse id tortor venenatis, blandit lacus ut, efficitur
+              diam.
+              Proin vulputate nisl vel sem consequat euismod.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="content-band band-layout container"
+        aria-label="Cloneable components">
+        <img class="band-media" src="/section-1.avif"
+          srcset="/section-1.avif 1x, /section-1@2x.avif 2x"
+          alt="Card component previews with typography options" loading="lazy"
+          fetchpriority="low" width="583" height="388" decoding="async" />
+        <span class="section-icon section-icon-blue"
+          aria-hidden="true">🎨</span>
+        <h2 class="band-title">200+ cloneable components</h2>
+        <p class="band-description">
+          From navigation bars to modals, buttons to forms, our library has
+          everything you need to jumpstart your development process.
+        </p>
+        <ul class="checklist" role="list">
+          <li>Rapidly build your own design system</li>
+          <li>Maintain consistency across your website</li>
           <li>Save hours in production time</li>
         </ul>
-
       </section>
-      <section>
-        <span>🎯</span>
-        <h2>complete style guide for projects</h2>
-        <img src="/section-2.png" alt="Huffle depictions of plugin functionality">
-        <span>🎨</span>
-        <p>A comprehensive style guide can make all the difference in creating a cohesive and effective design.</p>
-        <ul>
-          <li>
-            Determine the key elements of your brand
-          </li>
+
+      <section class="content-band band-layout reverse container"
+        aria-label="Style guide projects">
+        <img class="band-media" src="/section-2.avif"
+          srcset="/section-2.avif 1x, /section-2@2x.avif 2x"
+          alt="Style guide views with plugin workflows" loading="lazy"
+          fetchpriority="low" width="583" height="388" decoding="async" />
+        <span class="section-icon section-icon-amber"
+          aria-hidden="true">🎯</span>
+        <h2 class="band-title">Complete style guide for projects</h2>
+        <p class="band-description">
+          A comprehensive style guide can make all the difference in creating a
+          cohesive and effective design.
+        </p>
+        <ul class="checklist" role="list">
+          <li>Determine the key elements of your brand</li>
           <li>Include guidelines for layout</li>
           <li>Share your style guide with your team</li>
         </ul>
       </section>
-      <section><h2>
-        <span>⚙️</span>
-        Built in multiple ways
-      </h2>
-      <img src="/section-3.png" alt="mobile view of the app with sample avatars of customers">
-       <ul>
-          <li>
-           Identify the core message of your content
-          </li>
+
+      <section class="content-band multiway-section container multiway-layout"
+        aria-label="Built in multiple ways">
+        <img class="band-media" src="/section-3.avif"
+          srcset="/section-3.avif 1x, /section-3@2x.avif 2x"
+          alt="Mobile app preview with customer avatars" loading="lazy"
+          fetchpriority="low" width="583" height="388" decoding="async" />
+        <span class="section-icon section-icon-violet" aria-hidden="true">
+          ⚙️
+        </span>
+        <h2 class="multiway-title">Built in multiple ways</h2>
+        <ul class="checklist checklist-standalone" role="list">
+          <li>Identify the core message of your content</li>
           <li>Create a content calendar</li>
           <li>Repurpose your content by adapting</li>
         </ul>
-    </section>
+      </section>
     </main>
-    <footer>
-      <h2>Always with the legendary customer <span>experience.</span></h2>
-      <ul>
-        <li><a href="#">Overview</a></li>
-        <li><a href="#">Glossary</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Style Guide</a></li>
-        <li><a href="#">Colours</a></li>
-        <li><a href="#">Typography</a></li>
-        <li><a href="#">Shadow</a></li>
-        <li><a href="#">Avatar</a></li>
-        <li><a href="#">Buttons</a></li>
 
-      </ul>
-       <a href="./index.html"><img src="/full-logo.svg" alt="Huffie company logo"></a>
+    <footer class="site-footer" aria-label="Site footer">
+      <h2 class="footer-title">
+        <span class="footer-title-copy">Always with the legendary
+          customer <span class="footer-title-accent">experience.</span></span>
+      </h2>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul class="footer-column" aria-label="General links">
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Glossary</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+
+        <ul class="footer-column" aria-label="Design links">
+          <li><a href="#">Style Guide</a></li>
+          <li><a href="#">Colors</a></li>
+          <li><a href="#">Typography</a></li>
+        </ul>
+
+        <ul class="footer-column" aria-label="Component links">
+          <li><a href="#">Shadows</a></li>
+          <li><a href="#">Avatar</a></li>
+          <li><a href="#">Buttons</a></li>
+        </ul>
+      </nav>
+
+      <a href="./index.html" class="footer-logo"
+        aria-label="Back to Hufie home">
+        <img src="/full-logo.svg" alt="Hufie company logo" width="120"
+          height="36" loading="lazy" fetchpriority="low" decoding="async" />
+      </a>
     </footer>
   </body>
+
 </html>
