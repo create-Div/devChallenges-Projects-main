@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hufie - Where data and creativity come together</title>
-    <link rel="preload" as="image" href="/hero-image.avif"
-      imagesrcset="/hero-image.avif 1x, /hero-image@2x.avif 2x"
+    <link rel="preload" as="image" href="./public/hero-image.avif"
+      imagesrcset="./public/hero-image.avif 1x, ./public/hero-image@2x.avif 2x"
       media="(min-width: 768px)" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
       rel="stylesheet">
     <link rel="stylesheet" href="./src/style.css" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./public/favicon.ico" />
   </head>
 
   <body>
@@ -24,8 +24,8 @@
       <nav class="container site-header-inner primary-nav"
         aria-label="Primary navigation">
         <a href="./index.html" class="brand-link" aria-label="Hufie home">
-          <img src="/logo.svg" alt="Hufie company logo" width="42" height="42"
-            decoding="async" />
+          <img src="./public/logo.svg" alt="Hufie company logo" width="42"
+            height="42" decoding="async" />
         </a>
 
         <ul class="nav-links">
@@ -38,29 +38,31 @@
     <main id="main" class="page-main">
       <section class="hero-section container hero-layout"
         aria-label="Hero section">
-        <p class="version-badge">
-          <span class="badge-drop" aria-hidden="true">
-            <img src="/drop.svg" alt="" width="10" height="11"
-              decoding="async" />
-          </span>
-          <span>Version 4.0.1</span>
-        </p>
+        <div class="hero-copy-block">
+          <p class="version-badge">
+            <span class="badge-drop" aria-hidden="true">
+              <img src="./public/drop.svg" alt="" width="10" height="11"
+                decoding="async" />
+            </span>
+            <span>Version 4.0.1</span>
+          </p>
 
-        <h1 class="hero-title">Where data and creativity
-          come together.</h1>
-        <p class="hero-copy">
-          The fastest way to build and deploy websites with reusable
-          components.
-        </p>
+          <h1 class="hero-title">Where data and creativity
+            come together.</h1>
+          <p class="hero-copy">
+            The fastest way to build and deploy websites with reusable
+            components.
+          </p>
 
-        <div class="hero-actions">
-          <a class="button button-primary" href="#">Get started</a>
-          <a class="button button-ghost" href="#">View demo</a>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#">Get started</a>
+            <a class="button button-ghost" href="#">View demo</a>
+          </div>
         </div>
 
         <picture class="hero-media">
           <source media="(min-width: 768px)"
-            srcset="/hero-image.avif 1x, /hero-image@2x.avif 2x" />
+            srcset="./public/hero-image.avif 1x, ./public/hero-image@2x.avif 2x" />
           <img class="hero-media-image"
             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
             alt="Dashboard preview with reusable component cards"
@@ -126,61 +128,73 @@
         </ul>
       </section>
 
-      <section class="content-band band-layout container"
+      <section class="content-section content-layout container"
         aria-label="Cloneable components">
-        <img class="band-media" src="/section-1.avif"
-          srcset="/section-1.avif 1x, /section-1@2x.avif 2x"
+        <img class="content-media" src="./public/section-1.avif"
+          srcset="./public/section-1.avif 1x, ./public/section-1@2x.avif 2x"
           alt="Card component previews with typography options" loading="lazy"
           fetchpriority="low" width="583" height="388" decoding="async" />
-        <span class="section-icon section-icon-blue"
-          aria-hidden="true">🎨</span>
-        <h2 class="band-title">200+ cloneable components</h2>
-        <p class="band-description">
-          From navigation bars to modals, buttons to forms, our library has
-          everything you need to jumpstart your development process.
-        </p>
-        <ul class="checklist" role="list">
-          <li>Rapidly build your own design system</li>
-          <li>Maintain consistency across your website</li>
-          <li>Save hours in production time</li>
-        </ul>
+        <div class="content-copy">
+          <span class="section-icon section-icon-blue"
+            aria-hidden="true">🎨</span>
+          <h2 class="content-title">200+ cloneable components</h2>
+          <p class="content-description">
+            From navigation bars to modals, buttons to forms, our library has
+            everything you need to jumpstart your development process.
+          </p>
+          <ul class="checklist" role="list">
+            <li>Rapidly build your own design system</li>
+            <li>Maintain consistency across your website</li>
+            <li>Save hours in production time</li>
+          </ul>
+        </div>
       </section>
 
-      <section class="content-band band-layout reverse container"
+      <section class="content-section content-layout reverse container"
         aria-label="Style guide projects">
-        <img class="band-media" src="/section-2.avif"
-          srcset="/section-2.avif 1x, /section-2@2x.avif 2x"
+        <img class="content-media" src="./public/section-2.avif"
+          srcset="./public/section-2.avif 1x, ./public/section-2@2x.avif 2x"
           alt="Style guide views with plugin workflows" loading="lazy"
           fetchpriority="low" width="583" height="388" decoding="async" />
-        <span class="section-icon section-icon-amber"
-          aria-hidden="true">🎯</span>
-        <h2 class="band-title">Complete style guide for projects</h2>
-        <p class="band-description">
-          A comprehensive style guide can make all the difference in creating a
-          cohesive and effective design.
-        </p>
-        <ul class="checklist" role="list">
-          <li>Determine the key elements of your brand</li>
-          <li>Include guidelines for layout</li>
-          <li>Share your style guide with your team</li>
-        </ul>
+        <div class="content-copy">
+          <span class="section-icon section-icon-amber"
+            aria-hidden="true">🎯</span>
+          <h2 class="content-title">Complete style guide for projects</h2>
+          <p class="content-description">
+            A comprehensive style guide can make all the difference in creating
+            a
+            cohesive and effective design.
+          </p>
+          <ul class="checklist" role="list">
+            <li>Determine the key elements of your brand</li>
+            <li>Include guidelines for layout</li>
+            <li>Share your style guide with your team</li>
+          </ul>
+        </div>
       </section>
 
-      <section class="content-band multiway-section container multiway-layout"
+      <section
+        class="content-section multiway-section container multiway-layout"
         aria-label="Built in multiple ways">
-        <img class="band-media" src="/section-3.avif"
-          srcset="/section-3.avif 1x, /section-3@2x.avif 2x"
+        <img class="content-media" src="./public/section-3.avif"
+          srcset="./public/section-3.avif 1x, ./public/section-3@2x.avif 2x"
           alt="Mobile app preview with customer avatars" loading="lazy"
           fetchpriority="low" width="583" height="388" decoding="async" />
-        <span class="section-icon section-icon-violet" aria-hidden="true">
-          ⚙️
-        </span>
-        <h2 class="multiway-title">Built in multiple ways</h2>
-        <ul class="checklist checklist-standalone" role="list">
-          <li>Identify the core message of your content</li>
-          <li>Create a content calendar</li>
-          <li>Repurpose your content by adapting</li>
-        </ul>
+        <div class="content-copy">
+          <span class="section-icon section-icon-violet" aria-hidden="true">
+            ⚙️
+          </span>
+          <h2 class="multiway-title">Built in multiple ways</h2>
+          <p class="multiway-description">
+            Our approach to content creation allows you to build your content in
+            multiple ways, maximizing your efficiency and output.
+          </p>
+          <ul class="checklist checklist-standalone" role="list">
+            <li>Identify the core message of your content</li>
+            <li>Create a content calendar</li>
+            <li>Repurpose your content by adapting</li>
+          </ul>
+        </div>
       </section>
     </main>
 
@@ -195,15 +209,12 @@
           <li><a href="#">Overview</a></li>
           <li><a href="#">Glossary</a></li>
           <li><a href="#">FAQ</a></li>
+          <li><a href="#">Style Guide</a></li>
         </ul>
 
         <ul class="footer-column" aria-label="Design links">
-          <li><a href="#">Style Guide</a></li>
-          <li><a href="#">Colors</a></li>
+          <li><a href="#">Colours</a></li>
           <li><a href="#">Typography</a></li>
-        </ul>
-
-        <ul class="footer-column" aria-label="Component links">
           <li><a href="#">Shadows</a></li>
           <li><a href="#">Avatar</a></li>
           <li><a href="#">Buttons</a></li>
@@ -212,7 +223,7 @@
 
       <a href="./index.html" class="footer-logo"
         aria-label="Back to Hufie home">
-        <img src="/full-logo.svg" alt="Hufie company logo" width="120"
+        <img src="./public/full-logo.svg" alt="Hufie company logo" width="120"
           height="36" loading="lazy" fetchpriority="low" decoding="async" />
       </a>
     </footer>
