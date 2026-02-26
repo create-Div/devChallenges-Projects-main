@@ -1,8 +1,5 @@
 @layer reset, base, theme, layout, components, utilities;
 
-/* ============================================
-   RESET LAYER - DO NOT MODIFY
-   ============================================ */
 @layer reset {
 	/* 1. Use a more-intuitive box-sizing model */
 	*,
@@ -171,9 +168,9 @@
 		font-optical-sizing: auto;
 		font-weight: 400;
 		font-style: normal;
-
+		min-height: 100dvh;
 		color: var(--color-ink-700);
-		line-height: 1.65;
+		line-height: 1.5;
 	}
 
 	a {

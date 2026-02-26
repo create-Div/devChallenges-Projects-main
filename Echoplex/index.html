@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet">
+    <link rel="preload" as="image" href="/hero_image.avif"
+      imagesrcset="/hero_image@0.5x.avif 275w, /hero_image.avif 550w, /hero_image@2x.avif 1100w"
+      imagesizes="(max-width: 420px) calc(100vw - 24px), 550px"
+      fetchpriority="high">
+    <link rel="stylesheet" href="./src/style.css">
+    <title>Echoplex</title>
+  </head>
+
+  <body>
+    <header class="container">
+      <a href="/"><img src="./logo.svg" alt="EchoPlex company logo" width="72"
+          height="72" decoding="async" loading="eager"></a>
+
+      <nav aria-label="Primary">
+        <ul>
+          <li><a class="btn create" href="/">connect</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero container" aria-labelledby="EchoPlex">
+        <h1 id="EchoPlex"><span>EchoPlex</span> is the first community-owned
+          digital art
+          gallery.</h1>
+        <picture>
+          <source type="image/avif"
+            srcset="/hero_image@0.5x.avif 275w, /hero_image.avif 550w, /hero_image@2x.avif 1100w"
+            sizes="(max-width: 420px) calc(100vw - 24px), 550px">
+          <img src="/hero_image.avif"
+            alt="Gallery of various digital art pieces" width="550" height="620"
+            decoding="sync" fetchpriority="high" loading="eager">
+        </picture>
+        <p>Empowering Artists and Connecting Communities Through Digital Art.
+        </p>
+        <div class="btn-container">
+          <a class="btn create" href="/Echoplex/">create</a>
+          <a class="btn explore" href="/Echoplex/">explore</a>
+        </div>
+
+      </section>
+      <section class="features container" aria-labelledby="features">
+        <h2 id="features">Join 30,000+ creators and collectors</h2>
+        <ul class="features-list">
+          <li>
+            <span aria-hidden="true">
+              👾</span>
+            <h3><span>Immersive Digital Art</span> Experience</h3>
+          </li>
+          <li>
+            <span aria-hidden="true">⚙️</span>
+            <h3><span>Customizable</span> Flooring</h3>
+          </li>
+          <li>
+            <span aria-hidden="true">🎭</span>
+            <h3><span>State-of-the-Art</span> Displays</h3>
+          </li>
+          <li>
+            <span aria-hidden="true">🎓</span>
+            <h3><span>Expertly Designed</span> Lighting and Sound</h3>
+          </li>
+          <li>
+            <span aria-hidden="true">🧑‍💻</span>
+            <h3><span>Community</span> Engagement</h3>
+          </li>
+          <li>
+            <span aria-hidden="true">🧑‍🎨</span>
+            <h3><span>Artist</span> Collaborations</h3>
+          </li>
+          <li>
+            <span aria-hidden="true">📚</span>
+            <h3><span>Educational</span> Programs</h3>
+          </li>
+          <li>
+            <span aria-hidden="true">🤖</span>
+            <h3><span>Technology</span> Integration</h3>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer>
+      <h2>Begin your digital art journey with EchoPlex</h2>
+      <a class="btn create" href="/">create</a>
+
+      <div class="bottom-content">
+        <p>&copy; EchoPlex Oy. All rights reserved.</p>
+        <nav aria-label="Footer">
+          <ul class="footer-links">
+            <li><a href="/">Term</a></li>
+            <li><a href="/">Privacy Policy</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+
+</html>
