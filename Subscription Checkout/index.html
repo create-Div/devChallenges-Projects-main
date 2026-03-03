@@ -1,13 +1,156 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>subscription-checkout</title>
-  </head>
-  <body>
-    <div id="app"></div>
+    <title>Subscription Checkout | Neuralite</title>
+    <link rel="preload" as="image" href="/Checkout-background.avif"
+      imagesrcset="/Checkout-background.avif 1x, /Checkout-background@2x.avif 2x"
+      imagesizes="(min-width: 48em) 568px, 100vw">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
     <script type="module" src="/src/main.ts"></script>
+  </head>
+
+  <body>
+    <main class="checkout">
+      <section class="form-section">
+        <header class="header">
+          <img src="/neuralite-logo.svg" alt="Neuralite" class="logo" width="98"
+            height="20" loading="eager" decoding="async" fetchpriority="high" />
+          <h1>Upgrade to Plus</h1>
+          <p class="subtitle">
+            Upgrade today and take your AI-powered productivity to the next
+            level.
+          </p>
+        </header>
+
+        <form id="checkout-form" novalidate>
+          <div class="form-field">
+            <label for="name">Billed to</label>
+            <input type="text" id="name" name="name" autocomplete="name"
+              placeholder="Enter first &amp; last name" />
+            <span class="error-message" id="name-error"
+              aria-live="polite"></span>
+          </div>
+
+          <fieldset class="payment-methods">
+            <legend>Payment Details</legend>
+            <div class="payment-options">
+              <button type="button" class="payment-btn selected"
+                data-method="card" aria-label="Pay with credit card">
+                <img src="/atm-card.svg" alt="" aria-hidden="true" width="20"
+                  height="20" loading="eager" decoding="async" />
+                <span>Credit Card</span>
+              </button>
+              <button type="button" class="payment-btn" data-method="bank"
+                aria-label="Pay with bank transfer">
+                <img src="/bank.svg" alt="" aria-hidden="true" width="20"
+                  height="20" loading="eager" decoding="async" />
+                <span>Bank Transfer</span>
+              </button>
+              <button type="button" class="payment-btn" data-method="point"
+                aria-label="Pay with points">
+                <img src="/point-card.svg" alt="" aria-hidden="true" width="20"
+                  height="20" loading="eager" decoding="async" />
+                <span>Points</span>
+              </button>
+            </div>
+          </fieldset>
+
+          <div class="form-field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" autocomplete="email"
+              spellcheck="false" placeholder="Enter email address" />
+            <span class="error-message" id="email-error"
+              aria-live="polite"></span>
+          </div>
+
+          <fieldset class="form-row">
+            <legend class="visually-hidden">Location</legend>
+            <div class="form-field">
+              <label for="country">Country</label>
+              <select id="country" name="country" autocomplete="country-name">
+
+              </select>
+              <span class="error-message" id="country-error"
+                aria-live="polite"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="postal-code">Postal Code</label>
+              <input type="text" id="postal-code" name="postal-code"
+                autocomplete="postal-code" inputmode="numeric" value="00270" />
+              <span class="error-message" id="postal-code-error"
+                aria-live="polite"></span>
+            </div>
+          </fieldset>
+
+          <footer class="actions">
+            <button type="button" class="btn btn-cancel">Cancel</button>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </footer>
+        </form>
+      </section>
+
+      <aside class="plan-panel">
+        <h2 class="plan-heading">Starter Plan</h2>
+
+        <fieldset class="plan-toggle">
+          <legend class="visually-hidden">Billing Period</legend>
+          <label class="plan-option">
+            <input type="radio" name="plan" value="monthly" checked />
+            <span class="radio-indicator" aria-hidden="true"></span>
+            <span class="option-copy">
+              <span class="option-title">Pay monthly</span>
+              <span class="option-value">$20/ Month/ Member</span>
+            </span>
+          </label>
+          <label class="plan-option">
+            <input type="radio" name="plan" value="annual" />
+            <span class="radio-indicator" aria-hidden="true"></span>
+            <span class="option-copy">
+              <span class="option-title">Pay Annual</span>
+              <span class="option-value">$16/ Month/ Member</span>
+            </span>
+          </label>
+        </fieldset>
+
+        <hr class="plan-divider" />
+
+        <footer class="plan-total">
+          <span class="total-label">Total</span>
+          <span class="total-price">$20 / Month</span>
+        </footer>
+
+        <p class="plan-note">
+          <span class="lock-icon" aria-hidden="true"></span>
+          <span>
+            This environment is for demonstration purposes only. Please refrain
+            from entering any actual sensitive data.
+          </span>
+        </p>
+
+        <span class="plan-price visually-hidden" aria-hidden="true">
+          $20/ Month/ Member
+        </span>
+
+        <div class="plan-illustration" aria-hidden="true">
+          <img src="/Checkout-background.avif" srcset="
+							/Checkout-background.avif 1x,
+							/Checkout-background@2x.avif 2x
+						" alt="" width="568" height="374" loading="eager" decoding="sync"
+            fetchpriority="high" decoding="async" />
+        </div>
+      </aside>
+    </main>
   </body>
+
 </html>

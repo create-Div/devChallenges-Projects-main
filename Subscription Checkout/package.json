@@ -1,18 +1,28 @@
 {
-  "name": "subscription-checkout",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "typescript": "~5.9.3",
-    "vite": "^8.0.0-beta.13"
-  },
-  "overrides": {
-    "vite": "^8.0.0-beta.13"
-  }
+	"name": "subscription-checkout",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc --noEmit && vite build",
+		"preview": "vite preview",
+		"lint": "biome lint .",
+		"lint:fix": "biome lint --write .",
+		"format": "biome format --write .",
+		"check": "biome check --write ."
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.5",
+		"sharp": "^0.34.5",
+		"typescript": "~5.9.3",
+		"vite": "^8.0.0-beta.13"
+	},
+	"overrides": {
+		"vite": "^8.0.0-beta.13"
+	},
+	"dependencies": {
+		"ky": "^1.14.3",
+		"zod": "^4.3.6"
+	}
 }
