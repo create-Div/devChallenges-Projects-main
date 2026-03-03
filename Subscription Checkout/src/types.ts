@@ -8,8 +8,11 @@ export const checkoutSchema = z.object({
 	email: z
 		.string()
 		.min(1, "Email is required")
-		.email("Please enter a valid email"),
-	country: z.string().min(1, "Please select a country"),
+		.check(z.email("Please enter a valid email")),
+	country: z.preprocess(
+		(value) => (typeof value === "string" ? value : ""),
+		z.string().min(1, "Please select a country"),
+	),
 	"postal-code": z
 		.string()
 		.min(1, "Postal code is required")
