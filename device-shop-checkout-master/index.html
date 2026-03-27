@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | Device Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <header class="page-header">
+      <h1 class="page-title">Checkout</h1>
+      <p class="badge" aria-label="0 ITEMS">0 ITEMS</p>
+    </header>
+    <main class="page-main">
+      <section class="checkout-card">
+        <section class="order-panel" aria-labelledby="order-summary-title">
+          <h2 id="order-summary-title" class="screenreader-only">Order summary</h2>
+          <div class="cart-items"></div>
+          <p class="cart-empty" hidden>Your cart is empty.</p>
+          <form class="coupon-form" action="#" novalidate>
+            <label class="screenreader-only" for="couponCode">Coupon code</label>
+            <input
+              type="text"
+              id="couponCode"
+              name="couponCode"
+              placeholder="Enter coupon code"
+              class="input-field"
+            />
+            <button type="submit" class="btn btn-secondary">Apply Coupon</button>
+            <p class="coupon-feedback" role="status" aria-live="polite" hidden></p>
+          </form>
+          <dl class="totals">
+            <div class="total-row">
+              <dt>Sub total</dt>
+              <dd data-field="subtotal"></dd>
+            </div>
+            <div class="total-row">
+              <dt>Tax</dt>
+              <dd data-field="tax"></dd>
+            </div>
+            <div class="total-row">
+              <dt data-field="discount-label">Discount</dt>
+              <dd data-field="discount"></dd>
+            </div>
+            <div class="total-row grand-total">
+              <dt>Total</dt>
+              <dd data-field="total"></dd>
+            </div>
+          </dl>
+        </section>
+        <section class="details-panel" aria-labelledby="contact-title">
+          <h2 id="contact-title">Contact Information</h2>
+          <form class="checkout-form" action="#" novalidate>
+            <div class="form-group">
+              <label for="name">First &amp; Last name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter first &amp; last name"
+                class="input-field"
+                autofocus
+                autocomplete="name"
+              />
+              <p class="field-message" id="name-error" hidden></p>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter email address"
+                class="input-field"
+                autocomplete="email"
+              />
+              <p class="field-message" id="email-error" hidden></p>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="country">Country</label>
+                <div class="select-wrapper">
+                  <select
+                    id="country"
+                    name="country"
+                    class="input-field select-field"
+                    autocomplete="country-name"
+                  ></select>
+                  <svg
+                    class="select-icon"
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1.5L6 6.5L11 1.5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <p class="field-message" id="country-error" hidden></p>
+              </div>
+              <div class="form-group">
+                <label for="postalCode">Postal Code</label>
+                <input
+                  type="text"
+                  id="postalCode"
+                  name="postalCode"
+                  class="input-field"
+                  autocomplete="postal-code"
+                />
+                <p class="field-message" id="postalCode-error" hidden></p>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Continue</button>
+            <p class="checkout-feedback" role="status" aria-live="polite" hidden></p>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <template id="tpl-iphone-12-pro">
+      <article class="product-item">
+        <div class="product-image-frame">
+          <img
+            src="/Gold.avif"
+            srcset="/Gold.avif 1x, /Gold@2x.avif 2x"
+            width="39"
+            height="79"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            alt=""
+          />
+        </div>
+        <div class="product-info">
+          <h3 class="product-name" data-field="name"></h3>
+          <p class="product-variant" data-field="variant"></p>
+          <p class="product-price" data-field="price"></p>
+          <p class="product-quantity" data-field="quantity"></p>
+          <button type="button" class="remove-btn" aria-label="">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </article>
+    </template>
+    <template id="tpl-apple-watch">
+      <article class="product-item">
+        <div class="product-image-frame">
+          <img
+            src="/Apple-watch.avif"
+            srcset="/Apple-watch.avif 1x, /Apple-watchx2.avif 2x"
+            width="30"
+            height="53"
+            loading="eager"
+            decoding="async"
+            alt=""
+          />
+        </div>
+        <div class="product-info">
+          <h3 class="product-name" data-field="name"></h3>
+          <p class="product-variant" data-field="variant"></p>
+          <p class="product-price" data-field="price"></p>
+          <p class="product-quantity" data-field="quantity"></p>
+          <button type="button" class="remove-btn" aria-label="">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </article>
+    </template>
+    <template id="tpl-imac">
+      <article class="product-item">
+        <div class="product-image-frame">
+          <img
+            src="/iMac.avif"
+            srcset="/iMac.avif 1x, /iMac@2x.avif 2x"
+            width="80"
+            height="68"
+            loading="eager"
+            decoding="async"
+            alt=""
+          />
+        </div>
+        <div class="product-info">
+          <h3 class="product-name" data-field="name"></h3>
+          <p class="product-variant" data-field="variant"></p>
+          <p class="product-price" data-field="price"></p>
+          <p class="product-quantity" data-field="quantity"></p>
+          <button type="button" class="remove-btn" aria-label="remove product">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </article>
+    </template>
+  </body>
+</html>

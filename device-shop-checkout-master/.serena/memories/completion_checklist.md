@@ -1,0 +1,1 @@
+After making changes, run the relevant verification commands: typically npm run format:check, npm run lint, and npm run build. Use npm run format if formatting fixes are needed. For UI changes, also verify against the design images in design/ and test in the browser via npm run dev.

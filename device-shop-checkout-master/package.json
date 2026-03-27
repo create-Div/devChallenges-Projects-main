@@ -1,0 +1,24 @@
+{
+  "name": "device-shop",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bunx --bun vite",
+    "build": "tsc && bunx --bun vite build",
+    "preview": "bunx --bun vite preview",
+    "lint": "oxlint src --deny-warnings",
+    "lint:fix": "oxlint src --fix",
+    "format": "oxfmt src index.html",
+    "format:check": "oxfmt src index.html --check"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.42.0",
+    "oxlint": "^1.57.0",
+    "typescript": "~5.9.3",
+    "vite": "^8.0.1"
+  },
+  "dependencies": {
+    "zod": "^4.3.6"
+  }
+}

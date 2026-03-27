@@ -1,0 +1,671 @@
+@layer reset, elements, theme, componenets, utilities;
+
+/* The Coyier CSS Starter Modified */
+@layer reset {
+  html {
+    color-scheme: light dark;
+    tab-size: 2;
+    hanging-punctuation: first allow-end last;
+    word-break: break-word;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    text-wrap: balance;
+  }
+
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+    max-inline-size: 88ch;
+  }
+
+  a {
+    color: oklch(0.68 0.17 228);
+    text-underline-offset: 2px;
+    &:not(:is(:hover, :focus)) {
+      text-decoration-color: color-mix(in srgb, currentColor, transparent 50%);
+    }
+  }
+
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    inset-block-end: -0.25em;
+  }
+  sup {
+    inset-block-start: -0.5em;
+  }
+
+  ul,
+  ol,
+  dl {
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+    ul,
+    ol,
+    dl {
+      padding-inline-start: 2ch;
+    }
+  }
+
+  img,
+  video,
+  iframe {
+    display: block;
+    max-inline-size: 100%;
+    block-size: auto;
+    border-style: none;
+  }
+
+  figure {
+    inline-size: fit-content;
+    margin-inline: auto;
+  }
+  figcaption {
+    contain: inline-size;
+    font-size: 90%;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    font: inherit;
+    /* FUTURE: appearance: base; */
+  }
+
+  label {
+    display: block;
+  }
+
+  input:not(
+    :where([type="submit"], [type="checkbox"], [type="radio"], [type="button"], [type="reset"])
+  ) {
+    inline-size: 100%;
+  }
+
+  button,
+  input:where([type="submit"], [type="reset"], [type="button"]) {
+    background: CanvasText;
+    color: Canvas;
+    border: 1px solid transparent;
+  }
+
+  textarea {
+    field-sizing: content;
+    min-block-size: 5lh;
+    inline-size: 100%;
+    max-inline-size: 100%;
+  }
+
+  pre,
+  code,
+  kbd,
+  samp {
+    font-family: ui-monospace, SFMono-Regular, monospace;
+  }
+
+  svg {
+    fill: currentColor;
+  }
+
+  [aria-disabled="true" i],
+  [disabled] {
+    cursor: not-allowed;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  [disabled],
+  label:has(input[disabled]) {
+    opacity: 0.5;
+
+    [disabled] {
+      opacity: 1;
+    }
+  }
+
+  pre {
+    white-space: pre-wrap;
+    background: CanvasText;
+    color: Canvas;
+  }
+
+  hr {
+    border-style: solid;
+    border-width: 1px 0 0;
+    color: inherit;
+    height: 0;
+    overflow: visible;
+    margin-block: 2.5rem;
+  }
+
+  table {
+    caption-side: bottom;
+    border-collapse: collapse;
+    td {
+      font-size: 90%;
+    }
+    td,
+    th {
+      word-break: normal;
+      border: 1px solid gray;
+      padding: 0.5rem;
+    }
+  }
+  [role="region"][aria-labelledby][tabindex] {
+    overflow: auto;
+  }
+
+  .screenreader-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+  :focus-visible {
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @view-transition {
+      navigation: auto;
+    }
+
+    html {
+      interpolate-size: allow-keywords;
+      &:focus-within {
+        scroll-behavior: smooth;
+      }
+    }
+  }
+}
+
+@layer theme {
+  :root {
+    color-scheme: light;
+    --font-sans: "Manrope", "Segoe UI", sans-serif;
+    --page-bg: oklch(0.96 0.01 286);
+    --hero-fade: oklch(0.88 0.02 285 / 0.82);
+    --surface: oklch(1 0 0);
+    --surface-muted: oklch(0.97 0.005 286);
+    --surface-soft: oklch(0.98 0.003 286);
+    --ink: oklch(0.21 0.01 286);
+    --ink-muted: oklch(0.42 0.015 286);
+    --ink-soft: oklch(0.5 0.015 286);
+    --line: oklch(0.89 0.006 286);
+    --line-strong: oklch(0.85 0.01 286);
+    --accent: oklch(0.22 0.01 286);
+    --focus: oklch(0.58 0.14 256);
+    --card-shadow: 0 36px 64px oklch(0.24 0.03 286 / 0.1), 0 6px 16px oklch(0.24 0.03 286 / 0.06);
+    --radius-card: 24px;
+    --radius-control: 14px;
+    --card-max: 1270px;
+  }
+}
+
+@layer elements {
+  html,
+  body {
+    min-block-size: 100%;
+  }
+
+  body {
+    position: relative;
+    overflow-x: hidden;
+    padding-inline: clamp(12px, 3vw, 40px);
+    padding-block: 0 clamp(24px, 3vw, 40px);
+    font-family: var(--font-sans);
+    line-height: 1.4;
+    color: var(--ink);
+    background: linear-gradient(180deg, transparent 0 240px, var(--page-bg) 240px 100%);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      inset-inline: 0;
+      pointer-events: none;
+    }
+
+    &::before {
+      inset-block-start: 0;
+      block-size: clamp(224px, 26vw, 240px);
+      background:
+        linear-gradient(180deg, transparent 0%, transparent 74%, var(--hero-fade) 100%),
+        url("/background-image@2x.avif") center top / cover no-repeat;
+      z-index: -2;
+    }
+
+    @media (min-width: 48.001em) {
+      &::before {
+        background:
+          linear-gradient(180deg, transparent 0%, transparent 74%, var(--hero-fade) 100%),
+          url("/background-image.avif") center top / cover no-repeat;
+      }
+    }
+
+    &::after {
+      inset: auto 0 0;
+      block-size: min(640px, 55vh);
+      background: radial-gradient(circle at 50% 0%, oklch(1 0 0 / 0.7), transparent 68%);
+      z-index: -1;
+    }
+  }
+
+  input,
+  select,
+  button {
+    border-radius: var(--radius-control);
+  }
+
+  input::placeholder {
+    color: var(--ink-soft);
+    opacity: 1;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  :is(button, input, select):focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+}
+
+@layer componenets {
+  .page-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    max-inline-size: var(--card-max);
+    margin-inline: auto;
+    padding-block: clamp(32px, 4vw, 48px) clamp(26px, 3vw, 35px);
+    color: white;
+
+    @media (max-width: 48em) {
+      justify-content: flex-start;
+      padding-inline: 3px;
+    }
+  }
+
+  .page-title {
+    font-size: clamp(2rem, calc(1.6rem + 1.2vw), 2.35rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-inline-size: 77px;
+    min-block-size: 32px;
+    padding-inline: 14px;
+    border-radius: 999px;
+    background: oklch(0.23 0.01 286 / 0.92);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-top: 3px;
+  }
+
+  .page-main {
+    max-inline-size: var(--card-max);
+    margin-inline: auto;
+  }
+
+  .checkout-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr);
+    background: var(--surface);
+    border-radius: var(--radius-card);
+    overflow: clip;
+    box-shadow: var(--card-shadow);
+
+    @media (max-width: 46em) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .order-panel,
+  .details-panel {
+    padding: clamp(30px, 3vw, 32px);
+  }
+
+  .order-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    background: var(--surface-muted);
+  }
+
+  .product-item {
+    display: grid;
+    grid-template-columns: clamp(76px, 9vw, 100px) minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
+  }
+
+  .product-image-frame {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    inline-size: 100%;
+    margin: 0;
+    padding: 12px;
+    border: 1px solid var(--line-strong);
+    border-radius: 15px;
+    background: var(--surface);
+    box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.7);
+
+    img {
+      inline-size: 100%;
+      block-size: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .product-info {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+    gap: 7px 16px;
+    align-items: center;
+
+    .product-name {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .product-price {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: end;
+      white-space: nowrap;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: clamp(1rem, calc(0.9rem + 0.4vw), 1.05rem);
+    }
+
+    .product-variant {
+      grid-column: 1;
+      grid-row: 2;
+      color: var(--ink-muted);
+    }
+
+    .product-quantity {
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    .remove-btn {
+      grid-column: 2;
+      grid-row: 3;
+      justify-self: end;
+    }
+  }
+
+  .product-name {
+    margin-block-end: 6px;
+    font-size: clamp(1.05rem, calc(0.95rem + 0.6vw), 1.15rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+  }
+
+  .product-variant,
+  .product-quantity {
+    color: var(--ink-muted);
+  }
+
+  .product-variant,
+  .product-quantity {
+    font-size: clamp(1rem, calc(0.9rem + 0.4vw), 1.05rem);
+  }
+
+  .remove-btn {
+    display: inline-grid;
+    place-items: center;
+    inline-size: 28px;
+    block-size: 28px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--ink-soft);
+    transition: color 180ms ease;
+
+    &:hover {
+      color: oklch(0.35 0.02 286);
+    }
+
+    span {
+      font-size: 1.75rem;
+      line-height: 1;
+    }
+  }
+
+  .coupon-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 11px;
+    padding-block-start: 25px;
+    border-block-start: 1px solid var(--line);
+
+    @media (max-width: 23em) {
+      grid-template-columns: 1fr;
+    }
+
+    .input-field {
+      background: var(--surface);
+    }
+  }
+
+  .input-field {
+    min-block-size: 55px;
+    padding-inline: 16px;
+    border: 1px solid var(--line-strong);
+    background: var(--surface-soft);
+    color: var(--ink);
+    box-shadow: inset 0 1px 2px oklch(0.25 0.01 286 / 0.03);
+    transition:
+      border-color 180ms ease,
+      background-color 180ms ease,
+      box-shadow 180ms ease;
+
+    &:hover {
+      border-color: oklch(0.8 0.015 286);
+    }
+  }
+
+  .btn {
+    min-block-size: 55px;
+    padding-inline: 23px;
+    border: 0;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    transition: background-color 180ms ease;
+
+    &:hover {
+      background-color: oklch(0.17 0.02 286);
+    }
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    background-color: var(--accent);
+    color: white;
+  }
+
+  .btn-block {
+    inline-size: 100%;
+    margin-block-start: auto;
+  }
+
+  .totals {
+    display: grid;
+    gap: 11px;
+  }
+
+  .total-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    color: var(--ink-muted);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    font-size: clamp(1rem, calc(0.9rem + 0.4vw), 1.05rem);
+
+    dd {
+      white-space: nowrap;
+    }
+  }
+
+  .grand-total {
+    color: var(--ink);
+
+    dt,
+    dd {
+      font-weight: 800;
+    }
+  }
+
+  .details-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+    background: var(--surface);
+
+    h2 {
+      font-size: clamp(1.35rem, calc(1.1rem + 0.8vw), 1.55rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+  }
+
+  .checkout-form {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .form-group {
+    display: grid;
+    gap: 11px;
+
+    label {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+    }
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.92fr);
+    gap: 20px;
+
+    @media (max-width: 23em) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .select-wrapper {
+    position: relative;
+  }
+
+  .select-field {
+    appearance: none;
+    inline-size: 100%;
+    padding-inline-end: 48px;
+  }
+
+  .select-icon {
+    position: absolute;
+    inset-inline-end: 19px;
+    inset-block-start: 50%;
+    color: var(--ink-soft);
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .input-field[aria-invalid="true"] {
+    border-color: oklch(0.55 0.2 25);
+  }
+
+  .field-message {
+    color: oklch(0.55 0.2 25);
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    &::before {
+      content: "* ";
+    }
+  }
+
+  .coupon-feedback {
+    grid-column: 1 / -1;
+    font-size: 0.85rem;
+    font-weight: 600;
+    min-block-size: 0;
+
+    &.is-success {
+      color: oklch(0.5 0.15 145);
+    }
+
+    &.is-error {
+      color: oklch(0.55 0.2 25);
+
+      &::before {
+        content: "* ";
+      }
+    }
+  }
+
+  .checkout-feedback {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: oklch(0.5 0.15 145);
+    text-align: center;
+  }
+
+  .cart-empty {
+    color: var(--ink-muted);
+    font-style: italic;
+    padding-block: 1rem;
+  }
+}

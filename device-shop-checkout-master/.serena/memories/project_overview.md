@@ -1,0 +1,1 @@
+Static frontend checkout page for a Device Shop challenge. Built as a Vite + TypeScript app that currently renders the checkout UI directly from index.html with styles in src/style.css and assets in public/. Design reference images live in design/.
